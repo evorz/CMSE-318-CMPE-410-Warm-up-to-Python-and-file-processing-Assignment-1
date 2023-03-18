@@ -1,0 +1,20 @@
+1001,John,Doe,1998-03-25,Male,USA
+1002,Jane,Smith,1999-05-10,Female,Canada
+1003,Robert,Johnson,1997-12-31,Male,UK
+1004,Emily,Wilson,2000-02-15,Female,Australia
+1005,David,Kim,1996-07-20,Male,South Korea
+1006,Maria,Garcia,1995-09-01,Female,Mexico
+1007,James,Lee,1999-11-11,Male,USA
+1008,Sarah,Anderson,1998-06-30,Female,Canada
+1009,Michael,Wong,1997-04-05,Male,China
+1010,Ashley,Smith,1999-08-17,Female,USA
+1011,Jonathan,Nguyen,1996-12-23,Male,Vietnam
+1012,Karen,Miller,2000-01-01,Female,UK
+1013,Ryan,Tan,1997-03-10,Male,Singapore
+1014,Lisa,Chen,1999-06-20,Female,China
+1015,Daniel,Brown,1998-09-30,Male,USA
+1016,Christina,Lee,1996-11-18,Female,Canada
+1017,Jason,Lim,2000-04-07,Male,South Korea
+1018,Julia,Turner,1997-02-28,Female,Australia
+1019,William,Choi,1999-07-15,Male,USA
+1020,Megan,Lin,1996-05-12,Female,Taiwan
