@@ -52,7 +52,7 @@ class Student:
 
 
 def write_to_file(students):
-    with open("C:\\Users\\musta\\Desktop\\MyCodes\\Assaignment1 CMSE318\\student_data.txt", "w") as f:
+    with open("C:\\Users\\musta\\Desktop\\MyCodes\\Assignment1 CMSE318\\CMSE-318-CMPE-410-Warm-up-to-Python-and-file-processing-Assignment-1\\student_data.txt", "w") as f:
         for student in students:
             f.write(f"{student.get_student_number()},{student.get_first_name()},{student.get_last_name()},{student.get_date_of_birth().strftime('%Y-%m-%d')},{student.get_sex()},{student.get_country_of_birth()}\n")
     print("Data written to file.")
@@ -61,7 +61,7 @@ def write_to_file(students):
 def read_from_file():
     students = []
     try:
-        with open("C:\\Users\\musta\\Desktop\\MyCodes\\Assaignment1 CMSE318\\student_data.txt", "r") as f:
+        with open("C:\\Users\\musta\\Desktop\\MyCodes\\Assignment1 CMSE318\\CMSE-318-CMPE-410-Warm-up-to-Python-and-file-processing-Assignment-1\\student_data.txt", "r") as f:
             for line in f:
                 data = line.strip().split(",")
                 student = Student(data[0], data[1], data[2], datetime.datetime.strptime(data[3], "%Y-%m-%d").date(), data[4], data[5])
@@ -88,12 +88,12 @@ def add_student(students):
         print("Maximum number of students reached.")
 
 
-def find_student(students):
+def find_student_by_number(students):
     student_number = input("Enter student number: ")
     for student in students:
         if student.get_student_number() == student_number:
-            print(f"Student number: {student.get_student_number()}")
-            print(f"Name: {student.get_student_name()}")
+            print(f"\nStudent number: {student.get_student_number()}")
+            print(f"Name: {student.get_first_name()} {student.get_last_name()}")
             print(f"Age: {student.get_age()}")
             print(f"Sex: {student.get_sex()}")
             print(f"Country of birth: {student.get_country_of_birth()}")
@@ -103,7 +103,7 @@ def find_student(students):
 
 def show_all_students(students):
     for student in students:
-        print(f"Student number: {student.get_student_number()}")
+        print(f"\nStudent number: {student.get_student_number()}")
         print(f"Name: {student.get_first_name()} {student.get_last_name()}")
         print(f"Age: {student.get_age()}")
         print(f"Sex: {student.get_sex()}")
@@ -114,7 +114,7 @@ def show_students_by_birth_year(students):
     birth_year = input("Enter birth year: ")
     for student in students:
         if student.get_date_of_birth().year == int(birth_year):
-            print(f"Student number: {student.get_student_number()}")
+            print(f"\nStudent number: {student.get_student_number()}")
             print(f"Name: {student.get_first_name()} {student.get_last_name()}")
             print(f"Age: {student.get_age()}")
             print(f"Sex: {student.get_sex()}")
@@ -196,4 +196,4 @@ while True:
         break
     else:
         print("Invalid choice. Please try again.")
-
+    
