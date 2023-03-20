@@ -50,9 +50,12 @@ class Student:
         age = today.year - self.__date_of_birth.year - ((today.month, today.day) < (self.__date_of_birth.month, self.__date_of_birth.day))
         return age
 
+def set_file_location():
+    file_location = input("Enter file location(ex: C:\\Users\\user\\{path}\\student_data.txt): ")
+    return file_location
 
 def write_to_file(students):
-    with open("C:\\Users\\musta\\Desktop\\MyCodes\\Assignment1 CMSE318\\CMSE-318-CMPE-410-Warm-up-to-Python-and-file-processing-Assignment-1\\student_data.txt", "w") as f:
+    with open(file_location, "w") as f:
         for student in students:
             f.write(f"{student.get_student_number()},{student.get_first_name()},{student.get_last_name()},{student.get_date_of_birth().strftime('%Y-%m-%d')},{student.get_sex()},{student.get_country_of_birth()}\n")
     print("Data written to file.")
@@ -61,7 +64,7 @@ def write_to_file(students):
 def read_from_file():
     students = []
     try:
-        with open("C:\\Users\\musta\\Desktop\\MyCodes\\Assignment1 CMSE318\\CMSE-318-CMPE-410-Warm-up-to-Python-and-file-processing-Assignment-1\\student_data.txt", "r") as f:
+        with open(file_location, "r") as f:
             for line in f:
                 data = line.strip().split(",")
                 student = Student(data[0], data[1], data[2], datetime.datetime.strptime(data[3], "%Y-%m-%d").date(), data[4], data[5])
@@ -161,37 +164,40 @@ def delete_student(students):
             return
     print("Student not found.")
 
-
+file_location = "student_data.txt"
 students = []
 while True:
-    print("\n1. Save student data to file")
-    print("2. Load student data from file")
-    print("3. Add a new student")
-    print("4. Find a student by student number")
-    print("5. Show all students")
-    print("6. Show all students born in a given year")
-    print("7. Modify a student record")
-    print("8. Delete a student")
-    print("9. Quit")
+    print("\n1. Set file location")
+    print("2. Save student data to file")
+    print("3. Load student data from file")
+    print("4. Add a new student")
+    print("5. Find a student by student number")
+    print("6. Show all students")
+    print("7. Show all students born in a given year")
+    print("8. Modify a student record")
+    print("9. Delete a student")
+    print("10. Quit")
     choice = input("Enter choice: ")
 
     if choice == "1":
-        write_to_file(students)
+        set_file_location()
     elif choice == "2":
-        students = read_from_file()
+        write_to_file(students)
     elif choice == "3":
-        add_student(students)
+        students = read_from_file()
     elif choice == "4":
-        find_student_by_number(students)
+        add_student(students)
     elif choice == "5":
-        show_all_students(students)
+        find_student_by_number(students)
     elif choice == "6":
-        show_students_by_birth_year(students)
+        show_all_students(students)
     elif choice == "7":
-        modify_student_record(students)
+        show_students_by_birth_year(students)
     elif choice == "8":
-        delete_student(students)
+        modify_student_record(students)
     elif choice == "9":
+        delete_student(students)
+    elif choice == "10":
         print("Exiting program.")
         break
     else:
