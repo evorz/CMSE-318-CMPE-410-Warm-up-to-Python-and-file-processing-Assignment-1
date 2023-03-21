@@ -52,7 +52,7 @@ class Student:
 
 def set_file_location():
     global file_location
-    file_location = input("Enter file location(ex: C:\\Users\\user\\{path}\\student_data.txt): ")
+    file_location = input("Enter file location(ex: C:\\\\Users\\\\user\\\\{path}\\\\student_data.txt): ")
     return file_location
 
 def write_to_file(students):
