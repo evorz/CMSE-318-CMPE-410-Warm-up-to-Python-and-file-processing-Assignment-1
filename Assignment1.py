@@ -51,6 +51,7 @@ class Student:
         return age
 
 def set_file_location():
+    global file_location
     file_location = input("Enter file location(ex: C:\\Users\\user\\{path}\\student_data.txt): ")
     return file_location
 
@@ -164,7 +165,7 @@ def delete_student(students):
             return
     print("Student not found.")
 
-file_location = "C:\\Users\\musta\\Desktop\\MyCodes-main\\CMSE-318-CMPE-410-Warm-up-to-Python-and-file-processing-Assignment-1-main\\student_data.txt"
+file_location = set_file_location()
 students = []
 while True:
     print("\n1. Set file location")
@@ -178,6 +179,7 @@ while True:
     print("9. Delete a student")
     print("10. Quit")
     choice = input("Enter choice: ")
+    
 
     if choice == "1":
         set_file_location()
